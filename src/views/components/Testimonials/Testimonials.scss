@@ -1,0 +1,239 @@
+@use '../../../styles/base' as *;
+
+.testimonials {
+  @include section-padding;
+  background: $color-white;
+
+  &__container {
+    @include container;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-6;
+    margin-bottom: $spacing-16;
+    padding: $spacing-8;
+    background: $color-gray-50;
+    border-radius: $radius-2xl;
+
+    @include md {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__stat {
+    @include flex-column-center;
+    text-align: center;
+
+    &-value {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-bold;
+      color: $color-primary;
+      margin-bottom: $spacing-1;
+
+      @include md {
+        font-size: $font-size-4xl;
+      }
+    }
+
+    &-label {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-gray-900;
+      margin-bottom: $spacing-1;
+    }
+
+    &-desc {
+      font-size: $font-size-sm;
+      color: $color-gray-500;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto $spacing-12;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: $spacing-1 $spacing-3;
+    background: rgba(99, 102, 241, 0.1);
+    color: $color-primary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    border-radius: $radius-full;
+    margin-bottom: $spacing-4;
+  }
+
+  &__title {
+    @include heading-2;
+    color: $color-gray-900;
+    margin-bottom: $spacing-4;
+  }
+
+  &__subtitle {
+    @include body-text;
+    color: $color-gray-600;
+  }
+
+  &__carousel {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @include md {
+      gap: $spacing-8;
+    }
+  }
+
+  &__nav {
+    @include flex-center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: $color-white;
+    border: 1px solid $color-gray-200;
+    border-radius: 50%;
+    color: $color-gray-600;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      background: $color-gray-50;
+      border-color: $color-gray-300;
+      color: $color-gray-900;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: #{$breakpoint-sm - 1px}) {
+      display: none;
+    }
+  }
+
+  &__card {
+    flex: 1;
+    padding: $spacing-8;
+    background: $color-white;
+    border: 1px solid $color-gray-200;
+    border-radius: $radius-2xl;
+    box-shadow: $shadow-lg;
+    text-align: center;
+
+    @include md {
+      padding: $spacing-12;
+    }
+
+    &-quote {
+      margin-bottom: $spacing-6;
+
+      &-icon {
+        width: 48px;
+        height: 48px;
+        color: $color-primary-light;
+        margin: 0 auto;
+      }
+    }
+
+    &-text {
+      font-size: $font-size-lg;
+      font-style: italic;
+      color: $color-gray-700;
+      line-height: $line-height-relaxed;
+      margin-bottom: $spacing-8;
+
+      @include md {
+        font-size: $font-size-xl;
+      }
+    }
+
+    &-author {
+      @include flex-center;
+      gap: $spacing-4;
+      margin-bottom: $spacing-6;
+    }
+
+    &-avatar {
+      @include flex-center;
+      width: 56px;
+      height: 56px;
+      background: $gradient-primary;
+      border-radius: 50%;
+      color: $color-white;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+    }
+
+    &-info {
+      @include flex-column;
+      text-align: left;
+    }
+
+    &-name {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      color: $color-gray-900;
+    }
+
+    &-role {
+      font-size: $font-size-sm;
+      color: $color-gray-500;
+    }
+
+    &-metric {
+      display: inline-flex;
+      flex-direction: column;
+      padding: $spacing-4 $spacing-6;
+      background: $color-gray-50;
+      border-radius: $radius-xl;
+
+      &-value {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        color: $color-primary;
+
+        @include md {
+          font-size: $font-size-3xl;
+        }
+      }
+
+      &-label {
+        font-size: $font-size-sm;
+        color: $color-gray-600;
+      }
+    }
+  }
+
+  &__dots {
+    @include flex-center;
+    gap: $spacing-2;
+    margin-top: $spacing-8;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $color-gray-300;
+    border: none;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &--active {
+      width: 32px;
+      border-radius: $radius-full;
+      background: $color-primary;
+    }
+
+    &:hover:not(&--active) {
+      background: $color-gray-400;
+    }
+  }
+}

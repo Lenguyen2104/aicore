@@ -1,0 +1,97 @@
+@use '../../../styles/base' as *;
+
+.trusted-by {
+  padding: $spacing-8 0;
+  background: $color-white;
+  border-top: 1px solid $color-gray-200;
+  border-bottom: 1px solid $color-gray-200;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: $spacing-8;
+    flex-wrap: wrap;
+
+    @include md {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__text {
+    font-size: $font-size-base;
+    color: $color-gray-600;
+    font-weight: $font-weight-normal;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    strong {
+      font-weight: $font-weight-semibold;
+      color: $color-gray-900;
+    }
+  }
+
+  &__carousel {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+  }
+
+  &__carousel-track {
+    display: flex;
+    align-items: center;
+    gap: $spacing-8;
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity $transition-fast;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &-placeholder {
+      padding: $spacing-2 $spacing-4;
+      font-size: $font-size-sm;
+      color: $color-gray-500;
+      white-space: nowrap;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+}

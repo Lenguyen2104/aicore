@@ -1,0 +1,8 @@
+{
+  "name": "AI Core Solutions - Premium AI Outsourcing",
+  "description": "A high-end AI-driven IT outsourcing platform featuring modern design, multi-language support, and AI-powered content personalization.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
