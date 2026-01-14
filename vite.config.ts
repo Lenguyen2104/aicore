@@ -4,9 +4,14 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   server: {
-    port: 3000,
+    port: 3004,
     host: '0.0.0.0',
-    allowedHosts: ['aicorelabs.net'],
+    allowedHosts: [
+      'aicorelabs.net',
+      '103.54.153.65',
+      'localhost',
+    ],
+    strictPort: false,
   },
   plugins: [react()],
   resolve: {
